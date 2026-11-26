@@ -41,7 +41,7 @@ imie=imie.title().   \
 replace("l","ł") # lamanie wierszy
 print(imie)
 tekst_CSV="03/22/2025 jan Kowalski wyplata PLN: 8359"
-tekst_CSV="03/22/2025 marek PIEKNY wyplata PLN: 10992.12"
+# tekst_CSV="03/22/2025 marek PIEKNY wyplata PLN: 10992.12"
 print("data:", tekst_CSV[0:10])
 wyplata=tekst_CSV.find("wyplata")
 print("Imię i nazwisko:",tekst_CSV[11:wyplata].title())

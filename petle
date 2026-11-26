@@ -1,0 +1,60 @@
+# cars = ['audi','bmw','skoda','kia']
+# for pojazd in cars:
+#     if pojazd == "skoda":
+#         print(f"samochod: {pojazd} kupie")
+#     else:
+#          print(f"samochod: {pojazd} nie kupie")
+
+
+# alternatywa
+
+# for nr in range( len(cars)):
+#     if cars[nr] == "skoda":
+#         print(f"samochod: {cars[nr]} kupie")
+#     else:
+#          print(f"samochod: {cars[nr]} nie kupie")
+
+
+# garaz = {
+#     "Toyota": "Corolla",
+#     "Mazda": "CX-5",
+#     "BMW": "M3",
+#     "Tesla": "Model S"
+# }
+
+# for marka, model in garaz.items():
+#     print(f"Marka: {marka} | Model: {model}")
+
+
+
+# for x, y in auta_szczegoly.items():
+#     pojazd=x
+#     przebieg = y["przebieg"]
+#     print(f"Pojazd nr rej: {pojazd} ma przebieg: {przebieg}")
+
+import dane1
+from dane1 import auta_szczegoly as kol
+
+import dane2
+from dane2 import garaz as g
+
+for x, y in g.items():
+    pojazd=x
+    rok=y[1][0]
+    print(f"Pojazd {pojazd} ma rok: {rok}")
+
+from dane2 import garaz as g
+from prettytable import PrettyTable as pt
+tabelka = pt({"Pojazd", "Rok"})
+
+for x, y in g.items():
+    pojazd=x
+    rok=y[1][0]
+    print(f"Pojazd {pojazd} ma rok: {rok}")
+    tabelka.add_row( [pojazd,rok] )
+print(tabelka)
+
+csv=tabelka.get_csv_string()
+
+print(csv)
+

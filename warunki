@@ -1,0 +1,53 @@
+# # # bloki warunkowe
+# # kolor="zielony"
+# # print(kolor)
+# # if kolor=="bialy":
+# #     print("kupie")
+# # elif kolor == "rozowy":
+# #     print("SUPER")
+# # # opcjonalnie
+# # else:
+# #     print("nie kupie")
+# # print("test")
+
+# # #*************************************************
+# # kolor="zielony"
+# # cena=60000
+
+# # if ( kolor=="zielony" or kolor== "bialy" ) and cena <= 65000:
+# #     print("kupie")
+# #     # ************************************
+# cena = input("Podaj cene:")
+
+# # test = "343"
+# # print(test.isdigit())
+
+# if cena == "":
+#         print("brak ceny")
+# # elif cena.isdigit() == False:
+# #      
+#      # aletrantywa
+# elif not cena.isdigit():
+#         print("niepoprawna liczba !!!")
+# else:
+#         print(f"cena: {cena}")
+
+
+from tkinter import simpledialog
+
+kurs = simpledialog.askfloat("Kurs euro", "Podaj kurs euro", minvalue=1.0, maxvalue=10000.0,initialvalue=4)
+if kurs == None:
+    print("nie podano kursu")
+    exit()
+
+tekst_CSV="03/22/2025 jan Kowalski wyplata PLN: 8359"
+# tekst_CSV="03/22/2025 marek PIEKNY wyplata PLN: 10992.12"
+print("data:", tekst_CSV[0:10])
+wyplata=tekst_CSV.find("wyplata")
+print("Imię i nazwisko:",tekst_CSV[11:wyplata].title())
+wyplataPLN=tekst_CSV.find(":")
+print("zarabia ", tekst_CSV[wyplataPLN:], "PLN")
+zl=float(tekst_CSV[wyplataPLN+2:])
+euro=kurs*zl
+print("w Euro: ", euro, "po kursie",kurs)
+print(f"{tekst_CSV[0:10]} {tekst_CSV[11:wyplata].title()}", euro)
