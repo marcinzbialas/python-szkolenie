@@ -1,0 +1,54 @@
+owoce=["jablko","banan","wiśnia","truskawaka"]
+# print(owoce[1])
+print(owoce)
+# lista jest zmienialna, dlatego funkcje ktore uruchmiamy do niczeg nie przypisujemy
+owoce.sort()
+owoce.append(["grucha","kiwi"]) # lista zageszczona
+owoce.extend(["grucha","kiwi"]) # lista plaska
+print(owoce)
+owoce=[
+    ["jablko","banan","wiśnia","truskawaka"],
+    ["jablko","porzeczka","wiśnia","malina","abc"],
+]
+el=owoce[1][3] # wiersz, kolumna liczone od zera
+print(el)
+print(owoce[1])
+owoce[0][2]="kiwi"
+print(len(owoce[1]))
+tekst_CSV="03/22/2025 jan Kowalski wyplata PLN: 8359"
+moja_lista=tekst_CSV.split(" ")
+moja_lista.append(moja_lista[1] + " " + moja_lista[2])
+moja_lista.pop(1)
+moja_lista.pop(1)
+# alternatywa
+# del moja_lista[2:4]
+moja_lista[4] = moja_lista[4].title()
+print(moja_lista)
+# ****************************************************
+print("*" * 60)
+owoce=("jablko","banan","wiśnia","truskawaka")
+x,y,z,w=owoce
+print(x)
+# zestawy, zbiory
+owoce={"jablko","jablko","wiśnia","truskawaka"}
+unikalne=list(owoce)
+print(owoce)
+print(unikalne)
+# ****************************************************
+# slowniki
+dict= {
+    "brand": "Ford",
+    "model": "Mondeo",
+    "year": 2018,
+    10: "abc",
+    (1,5): "parametry",
+    "wlasciwosci": ["skora","klima"]
+}
+print(dict)
+x=dict["model"]
+print(x)
+print(dict["wlasciwosci"][0])
+dict["year"]=2023
+dict["kolor"]="czarny"
+print(dict)
+print(dict.items())
